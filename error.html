@@ -1,0 +1,72 @@
+
+<html>
+    <head>
+        <title>
+            ClinGen Tool
+        </title>
+        
+        <style>
+            body {
+                    max-width:400px;
+                    margin:50px auto;
+                    background:#fff;
+                    border-radius:2px;
+                    padding:20px;
+                    font-family: Georgia, "Times New Roman", Times, serif;
+            }
+            .ali {
+                    text-align: center;
+            }
+            button {
+                    background: #2471FF;
+                    border: none;
+                    padding: 10px 20px 10px 20px;
+                    border-bottom: 3px solid #5994FF;
+                    border-radius: 3px;
+                    color: #D2E2FF;
+            }
+            h1 {
+                    display: block;
+                    padding: 0;
+                    text-align: center;
+                    margin: 0px 0px 20px 0px;
+                    color: #5C5C5C;
+                    font-size:x-large;
+            }
+            li{
+                    <!--display: block;-->
+                    padding: 9px;
+                    <!--border:1px solid #DDDDDD;-->
+                    margin-bottom: 30px;
+                    color: #5C5C5C;
+                    border-radius: 3px;
+                    font-family: Georgia, "Times New Roman", Times, serif;
+            }
+
+            label {
+                    display: block;
+                    color: #5C5C5C;
+                    font-size: large;
+                    overflow-wrap: break-word;
+                    font-family: Georgia, "Times New Roman", Times, serif;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Your query was for gene: {{gene}}. {{message}}.</h1>
+
+        <label>Try: </label>
+        <li>checking your spelling</li>
+        <li>refining your filters</li>
+        <li>removing extraneous characters</li>
+
+        <br>
+        
+        <div class="ali">
+            <button type="button" onclick="window.location.href='/'">Submit new query</button>
+        </div>
+    </body>
+</html>

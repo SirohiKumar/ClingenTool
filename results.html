@@ -1,0 +1,141 @@
+
+<html>
+    <head>
+        <title>
+            ClinGen Tool
+        </title>
+        <style> 
+
+        .mystyle {
+            font-size: 11pt; 
+            font-family: Arial;
+            border-collapse: collapse; 
+            border: 1px solid silver;
+        }
+
+        .mystyle td, th {
+            padding: 5px;
+            text-align:left;
+        }
+
+        .mystyle th {
+            cursor: pointer;
+        }
+
+        .mystyle tr:nth-child(even) {
+            background: #E0E0E0;
+        }
+
+        .mystyle tr:hover {
+            background: silver;
+        }
+
+        button {
+                font-family: Arial;
+                background: #2471FF;
+                border: none;
+                padding: 7px 10px 7px 10px;
+                border-bottom: 1.5px solid #5994FF;
+                border-radius: 1.5px;
+                color: #D2E2FF; 
+        }
+
+        .ali {
+                text-align: center;
+        }
+
+        h1 {
+                font-family: Arial;
+                display: block;
+                padding: 0;
+                text-align: left;
+                margin: 0px 0px 20px 0px;
+                color: #5C5C5C;
+                font-size:large;
+        }
+        
+        li {
+                <!--display: block;-->
+                padding: 9px;
+                <!--border:1px solid #DDDDDD;-->
+                margin-bottom: 30px;
+                margin-left: 10px;
+                color: #5C5C5C;
+                border-radius: 3px;
+                font-size: medium;
+                font-family: Arial;
+        }
+        
+        label {
+                display: block;
+                padding: 2px;
+                color: #5C5C5C;
+                font-size: medium;
+                overflow-wrap: break-word;
+                font-family: Arial;
+        }
+    
+        </style>
+    </head>
+
+    <body>
+    
+        <br>
+
+        <!--information on the gene they chose + the option to try again-->
+        <h1>You are viewing all $$$$ publications that show an association between gene "****" and a disease or mouse phenotype(s). [rescue] <!-- lack of end tag is taken care of in code --> </h1>
+
+        <div class="ali">
+            <button type="button" onclick="window.location.href='/'">Submit new query</button>
+        </div>
+        <br>
+
+        <!-- placeholder for the table-->
+        @@@@
+
+        <script>
+        //script for sorting the table from https://www.w3schools.com/howto/howto_js_sort_table.asp
+        function sortTable(n) {
+          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+          //specifically mark that the table we're looking for is "resultsTable" which is denoted in the HTML
+          table = document.getElementById("resultsTable");
+          switching = true;
+          dir = "asc";
+          while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+              if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+              else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              switchcount ++;
+            }
+            else {
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+        </script>
+
+</body>
+</html>
+
